@@ -297,6 +297,15 @@ const arabCountriesMap: Record<string, string> = {
   "Mauritania": "موريتانيا"
 };
 
+const isGithubActions = typeof process !== 'undefined' && process.env.GITHUB_ACTIONS === 'true';
+const repoName = isGithubActions && process.env.GITHUB_REPOSITORY
+  ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}`
+  : '';
+
+const getAssetPath = (src: string) => {
+  return `${repoName}${src}`;
+};
+
 export default function HomePage() {
   const [language, setLanguage] = useState<'ar' | 'en'>('en');
 
@@ -580,7 +589,7 @@ export default function HomePage() {
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="w-8 h-8 rounded-lg border border-zinc-200/80 bg-zinc-50/50 flex items-center justify-center overflow-hidden p-1 shadow-sm transition-all hover:border-zinc-300">
               <Image
-                src="/logo.png"
+                src={getAssetPath("/logo.png")}
                 alt="Dentoscope Logo"
                 width={20}
                 height={20}
@@ -677,7 +686,7 @@ export default function HomePage() {
           </div>
           <div className="relative h-[250px] sm:h-[480px] w-full rounded-lg overflow-hidden border border-zinc-100">
             <Image
-              src="/screenshots/dashboard_real.png"
+              src={getAssetPath("/screenshots/dashboard_real.png")}
               alt="Dentoscope Clinic Dashboard Screenshot"
               fill
               sizes="(max-width: 1024px) 100vw, 1024px"
@@ -710,7 +719,7 @@ export default function HomePage() {
             <div className="bg-white border border-zinc-200/60 rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col gap-6 reveal">
               <div className="relative h-[220px] sm:h-[320px] w-full rounded-2xl overflow-hidden border border-zinc-100">
                 <Image
-                  src="/screenshots/camera_real.png"
+                  src={getAssetPath("/screenshots/camera_real.png")}
                   alt="Intraoral capture workstation view screenshot"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 550px"
@@ -727,7 +736,7 @@ export default function HomePage() {
             <div className="bg-white border border-zinc-200/60 rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col gap-6 reveal">
               <div className="relative h-[220px] sm:h-[320px] w-full rounded-2xl overflow-hidden border border-zinc-100">
                 <Image
-                  src="/screenshots/annotations_real.png"
+                  src={getAssetPath("/screenshots/annotations_real.png")}
                   alt="Three.js 3D dental arch screenshot"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 550px"
@@ -746,7 +755,7 @@ export default function HomePage() {
           <div className="mt-10 bg-white border border-zinc-200/60 rounded-3xl p-6 shadow-md flex flex-col lg:flex-row items-center gap-8 reveal">
             <div className="lg:w-2/3 relative h-[200px] sm:h-[340px] w-full rounded-2xl overflow-hidden border border-zinc-100">
               <Image
-                src="/screenshots/preset_real.png"
+                src={getAssetPath("/screenshots/preset_real.png")}
                 alt="Preset adjustments before/after screenshot"
                 fill
                 sizes="(max-width: 1024px) 100vw, 680px"
