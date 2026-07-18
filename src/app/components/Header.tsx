@@ -32,7 +32,7 @@ export default function Header({ language, toggleLanguage, scrollToSection }: He
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold text-zinc-500">
+        <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold text-zinc-500">
           <button onClick={() => scrollToSection('gallery')} className="hover:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 font-semibold">{m.navGallery}</button>
           <button onClick={() => scrollToSection('latency')} className="hover:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 font-semibold">{m.navLatency}</button>
           <button onClick={() => scrollToSection('features')} className="hover:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 font-semibold">{m.navFeatures}</button>
