@@ -91,13 +91,13 @@ export default function HomePage() {
   const isRTL = language === 'ar';
 
   return (
-    <div className={`min-h-screen bg-[#f9f9fa] text-zinc-900 font-sans selection:bg-zinc-900 selection:text-white ${isRTL ? 'rtl' : 'ltr'} overflow-x-hidden`}>
+    <div className={`min-h-screen bg-[#f9f9fa] text-zinc-900 font-sans selection:bg-zinc-900 selection:text-white ${isRTL ? 'rtl' : 'ltr'}`}>
       <Header
         language={language}
         toggleLanguage={toggleLanguage}
         scrollToSection={scrollToSection}
       />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero language={language} scrollToSection={scrollToSection} />
         <Gallery language={language} scrollToSection={scrollToSection} />
         <LatencySimulator language={language} />
