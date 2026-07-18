@@ -1151,7 +1151,7 @@ export default function HomePage() {
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg border border-zinc-200/60 bg-white/50 flex items-center justify-center overflow-hidden p-1.5 shadow-sm">
               <Image
-                src="/logo.png"
+                src={getAssetPath("/logo.png")}
                 alt="Dentoscope Logo"
                 width={18}
                 height={18}
