@@ -257,12 +257,14 @@ export interface CountryData {
   arName: string;
 }
 
-export const countriesList: CountryData[] = Object.keys(countries.getNames("en")).map(code => {
-  const enName = countries.getName(code, "en") || "";
-  const arName = countries.getName(code, "ar") || enName;
-  return {
-    code,
-    enName,
-    arName
-  };
-}).sort((a, b) => a.enName.localeCompare(b.enName));
+export const countriesList: CountryData[] = Object.keys(countries.getNames("en"))
+  .filter(code => code !== "IL")
+  .map(code => {
+    const enName = countries.getName(code, "en") || "";
+    const arName = countries.getName(code, "ar") || enName;
+    return {
+      code,
+      enName,
+      arName
+    };
+  }).sort((a, b) => a.enName.localeCompare(b.enName));
