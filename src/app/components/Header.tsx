@@ -41,11 +41,11 @@ export default function Header({ language, toggleLanguage, scrollToSection }: He
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Language toggle */}
           <button
             onClick={toggleLanguage}
-            className="text-xs font-semibold px-3 py-1.5 rounded-full border border-zinc-200 hover:bg-zinc-50 text-zinc-600 hover:text-zinc-900 transition-all cursor-pointer bg-transparent"
+            className="text-[10px] sm:text-xs font-semibold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-zinc-200 hover:bg-zinc-50 text-zinc-600 hover:text-zinc-900 transition-all cursor-pointer bg-transparent"
           >
             {language === 'ar' ? 'English' : 'العربية'}
           </button>
@@ -53,12 +53,11 @@ export default function Header({ language, toggleLanguage, scrollToSection }: He
           {/* Primary Action */}
           <button
             onClick={() => scrollToSection('demo')}
-            className="bg-zinc-900 hover:bg-black text-white text-xs font-semibold px-4 py-1.5 rounded-full transition-all shadow-sm flex items-center gap-1 cursor-pointer border-0"
+            className="bg-zinc-900 hover:bg-black text-white text-[10px] sm:text-xs font-semibold px-3 py-1 sm:px-4 sm:py-1.5 rounded-full transition-all shadow-sm flex items-center gap-1 cursor-pointer border-0"
           >
             {m.navDemo}
           </button>
         </div>
-
       </div>
     </header>
   );

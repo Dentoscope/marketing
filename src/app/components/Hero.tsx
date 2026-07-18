@@ -35,13 +35,13 @@ export default function Hero({ language, scrollToSection }: HeroProps) {
       <div className="flex gap-4 mb-20 reveal reveal-delay-300">
         <button
           onClick={() => scrollToSection('demo')}
-          className="bg-zinc-900 hover:bg-black text-white font-semibold px-8 py-3 rounded-full text-sm transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer border-0"
+          className="bg-zinc-900 hover:bg-black text-white font-semibold px-5 py-2.5 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer border-0"
         >
           {m.navDemo}
         </button>
         <button
           onClick={() => scrollToSection('gallery')}
-          className="border border-zinc-200 hover:bg-zinc-50 font-semibold px-8 py-3 rounded-full text-sm transition-all flex items-center justify-center gap-2 cursor-pointer text-zinc-600 hover:text-zinc-900 bg-transparent font-semibold"
+          className="border border-zinc-200 hover:bg-zinc-50 font-semibold px-5 py-2.5 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer text-zinc-600 hover:text-zinc-900 bg-transparent"
         >
           {language === 'ar' ? 'تصفح النظام' : 'Explore System'}
           <svg className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
