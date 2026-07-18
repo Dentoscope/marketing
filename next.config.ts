@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath: repo,
   images: { unoptimized: true },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: repo,
+  },
 };
 
 export default nextConfig;
