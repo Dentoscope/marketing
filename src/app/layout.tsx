@@ -75,8 +75,8 @@ export const metadata: Metadata = {
   title: "Dentoscope — Advanced Clinical Imaging & Patient Records",
   description: "A high-performance medical assistant for dental clinics. Stream RTSP microscope feeds with sub-second latency, capture snapshots, and organize patient media records.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "logo.png",
+    apple: "logo.png",
   }
 };
 
