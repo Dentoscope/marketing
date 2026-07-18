@@ -91,7 +91,7 @@ export default function HomePage() {
   const isRTL = language === 'ar';
 
   return (
-    <div className={`min-h-screen bg-[#f9f9fa] text-zinc-900 font-sans selection:bg-zinc-900 selection:text-white ${isRTL ? 'rtl' : 'ltr'}`}>
+    <div className={`min-h-screen bg-[#f9f9fa] text-zinc-900 font-sans selection:bg-zinc-900 selection:text-white ${isRTL ? 'rtl' : 'ltr'} overflow-x-hidden`}>
       <Header
         language={language}
         toggleLanguage={toggleLanguage}
