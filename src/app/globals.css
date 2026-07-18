@@ -110,21 +110,23 @@ html {
   transform: translate3d(0, 0, 0) !important;
 }
 
-/* Staggered delay helpers - spaced further apart for slow, cinematic load */
-.reveal-delay-100 {
-  transition-delay: 200ms;
-}
-.reveal-delay-200 {
-  transition-delay: 450ms;
-}
-.reveal-delay-300 {
-  transition-delay: 700ms;
-}
-.reveal-delay-400 {
-  transition-delay: 950ms;
-}
-.reveal-delay-500 {
-  transition-delay: 1200ms;
+/* Staggered delay helpers - only apply on desktop/tablet where cards are rendered horizontally */
+@media (min-width: 768px) {
+  .reveal-delay-100 {
+    transition-delay: 200ms;
+  }
+  .reveal-delay-200 {
+    transition-delay: 450ms;
+  }
+  .reveal-delay-300 {
+    transition-delay: 700ms;
+  }
+  .reveal-delay-400 {
+    transition-delay: 950ms;
+  }
+  .reveal-delay-500 {
+    transition-delay: 1200ms;
+  }
 }
 
 
