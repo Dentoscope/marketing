@@ -7,7 +7,6 @@ import Gallery from './components/Gallery';
 import LatencySimulator from './components/LatencySimulator';
 import SetupGuide from './components/SetupGuide';
 import FeaturesBento from './components/FeaturesBento';
-import SpecsAccordion from './components/SpecsAccordion';
 import DemoForm from './components/DemoForm';
 import Footer from './components/Footer';
 
@@ -103,7 +102,6 @@ export default function HomePage() {
         <LatencySimulator language={language} />
         <SetupGuide language={language} />
         <FeaturesBento language={language} />
-        <SpecsAccordion language={language} />
         <DemoForm language={language} />
       </main>
       <Footer language={language} scrollToSection={scrollToSection} />

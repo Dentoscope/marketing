@@ -36,7 +36,6 @@ export default function Header({ language, toggleLanguage, scrollToSection }: He
           <button onClick={() => scrollToSection('gallery')} className="hover:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 font-semibold">{m.navGallery}</button>
           <button onClick={() => scrollToSection('latency')} className="hover:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 font-semibold">{m.navLatency}</button>
           <button onClick={() => scrollToSection('features')} className="hover:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 font-semibold">{m.navFeatures}</button>
-          <button onClick={() => scrollToSection('specs')} className="hover:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 font-semibold">{m.navSpecs}</button>
           <button onClick={() => scrollToSection('demo')} className="hover:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 font-semibold">{m.navDemo}</button>
         </nav>
 
