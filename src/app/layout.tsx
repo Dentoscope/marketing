@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: "variable",
 });
 
 const alexandria = Alexandria({
@@ -56,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${alexandria.variable}`}>
+    <html lang="en" dir="rtl" className={`${inter.variable} ${alexandria.variable}`}>
       <body className="antialiased min-h-screen bg-white text-zinc-900">
         {children}
       </body>
