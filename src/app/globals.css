@@ -36,10 +36,7 @@ html[dir="rtl"] textarea,
 html[dir="rtl"] button,
 html[dir="rtl"] p,
 html[dir="rtl"] span,
-html[dir="rtl"] a {
-  font-family: var(--font-arabic-text), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-}
-
+html[dir="rtl"] a,
 html[dir="rtl"] h1,
 html[dir="rtl"] h2,
 html[dir="rtl"] h3,
@@ -49,7 +46,7 @@ html[dir="rtl"] h6,
 html[dir="rtl"] .font-bold,
 html[dir="rtl"] .font-black,
 html[dir="rtl"] .font-semibold {
-  font-family: var(--font-arabic-display), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: var(--font-arabic), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 /* Custom scrollbar */
