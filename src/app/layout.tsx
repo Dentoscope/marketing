@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Alexandria } from "next/font/google";
+import { Alexandria } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: "variable",
-});
 
 const alexandria = Alexandria({
   variable: "--font-arabic",
-  subsets: ["arabic"],
+  subsets: ["latin", "arabic"],
   weight: "variable"
 });
 
@@ -56,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="rtl" className={`${inter.variable} ${alexandria.variable}`}>
+    <html lang="en" dir="rtl" className={`${alexandria.variable}`}>
       <body className="antialiased min-h-screen bg-white text-zinc-900">
         {children}
       </body>
