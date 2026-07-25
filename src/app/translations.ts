@@ -31,8 +31,8 @@ export const localTranslations = {
     screen2Title: "3D Case Presentation",
     screen2Desc: "Walk patients through their condition using interactive 3D dental models. Pinpoint decay, illustrate root canals, and present treatment options visually. Patients who understand say yes.",
 
-    screen3Title: "Complete Patient History",
-    screen3Desc: "Every appointment, every X-ray, every video, every prescription — organized in one chronological timeline per patient. Accessible from any device on your clinic network.",
+    screen3Title: "Appointment Management",
+    screen3Desc: "Schedule patient visits, track chair availability, and manage follow-up appointments directly from your clinical workstation. Your day stays organized.",
 
     screen4Title: "Digital Prescriptions & Direct Printing",
     screen4Desc: "Draft digital prescriptions during the treatment session, attach them to the patient record, and send them directly to your clinic printer before the patient leaves the chair.",
@@ -155,8 +155,8 @@ export const localTranslations = {
     screen2Title: "عرض الحالة ثلاثي الأبعاد",
     screen2Desc: "امشِ المريض خلال حالته باستخدام مجسمات أسنان تفاعلية. حدد التسوس، وضّح علاج الجذور، واعرض خيارات العلاج بصرياً. المريض الذي يفهم يوافق.",
 
-    screen3Title: "السجل الكامل للمريض",
-    screen3Desc: "كل موعد، كل أشعة، كل فيديو، كل وصفة — مرتبة في سجل زمني واحد لكل مريض. تفتحه من أي جهاز على شبكة العيادة.",
+    screen3Title: "إدارة المواعيد",
+    screen3Desc: "نظّم مواعيد المرضى، تابع جاهزية الكراسي العلاجية، وحدد جلسات المتابعة مباشرة من شاشة العمل السريرية. يومك يظل منظماً.",
 
     screen4Title: "الوصفات الطبية الرقمية والطباعة المباشرة",
     screen4Desc: "حرر الوصفة الطبية رقمياً أثناء الجلسة، أرفقها بملف المريض، واطبعها مباشرة على طابعة العيادة قبل مغادرة المريض للكرسي.",

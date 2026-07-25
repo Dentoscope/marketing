@@ -24,22 +24,28 @@ export const CLINIC_IMAGES = {
       ar: "/screenshots/annotations_real.png",
     },
 
-    // 3. Complete Patient History
-    screen3History: {
-      en: "/screenshots/dashboard_real.png",
-      ar: "/screenshots/dashboard_real.png",
+    // 3. Smart Appointment & Chair Scheduling (Supports 2 swappable images: weekly view & monthly view)
+    screen3Appointment: {
+      weekly: {
+        en: "/screenshots/appointment_weekly.png",
+        ar: "/screenshots/appointment_weekly.png",
+      },
+      monthly: {
+        en: "/screenshots/appointment_monthly.png",
+        ar: "/screenshots/appointment_monthly.png",
+      }
     },
 
-    // 4. Digital Prescriptions & Direct Printing
+    // 4. Digital Prescriptions & Direct Printing (Supports 2 swappable images: digital view & print view)
     screen4Prescriptions: {
-      en: "/screenshots/preset_real.png",
-      ar: "/screenshots/preset_real.png",
+      digital: {
+        en: "/screenshots/prescriptions_digital.png",
+        ar: "/screenshots/prescriptions_digital.png",
+      },
+      print: {
+        en: "/screenshots/prescriptions_print.png",
+        ar: "/screenshots/prescriptions_print.png",
+      }
     },
-  },
-
-  // Appointment & Chair Scheduling banner screenshot
-  appointmentBanner: {
-    en: "/screenshots/preset_real.png",
-    ar: "/screenshots/preset_real.png",
   },
 };
