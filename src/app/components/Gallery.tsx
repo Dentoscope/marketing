@@ -99,7 +99,7 @@ export default function Gallery({ language, scrollToSection }: GalleryProps) {
                           : 'text-zinc-300 hover:text-white bg-transparent'
                       }`}
                     >
-                      {language === 'ar' ? 'العرض الأسبوعي' : 'Weekly View'}
+                      {language === 'ar' ? 'الأسبوعي' : 'Weekly View'}
                     </button>
                     <button
                       onClick={() => setAppointmentView('monthly')}
@@ -109,7 +109,7 @@ export default function Gallery({ language, scrollToSection }: GalleryProps) {
                           : 'text-zinc-300 hover:text-white bg-transparent'
                       }`}
                     >
-                      {language === 'ar' ? 'العرض الشهري' : 'Monthly View'}
+                      {language === 'ar' ? 'الشهري' : 'Monthly View'}
                     </button>
                   </div>
                 )}
@@ -125,7 +125,7 @@ export default function Gallery({ language, scrollToSection }: GalleryProps) {
                           : 'text-zinc-300 hover:text-white bg-transparent'
                       }`}
                     >
-                      {language === 'ar' ? 'الشاشة الرقمية' : 'Digital View'}
+                      {language === 'ar' ? 'الرقمية' : 'Digital View'}
                     </button>
                     <button
                       onClick={() => setPrescriptionView('print')}
@@ -135,7 +135,7 @@ export default function Gallery({ language, scrollToSection }: GalleryProps) {
                           : 'text-zinc-300 hover:text-white bg-transparent'
                       }`}
                     >
-                      {language === 'ar' ? 'النسخة المطبوعة' : 'Print View'}
+                      {language === 'ar' ? 'المطبوعة' : 'Print View'}
                     </button>
                   </div>
                 )}

@@ -81,7 +81,7 @@ export default function DemoForm({ language }: DemoFormProps) {
           message: ''
         });
       } else {
-        alert(language === 'ar' ? 'حدث خطأ أثناء إرسال طلب العرض. يرجى المحاولة مرة أخرى.' : 'Failed to send demo request. Please try again.');
+        alert(language === 'ar' ? 'حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.' : 'Failed to send demo request. Please try again.');
       }
     } catch (error) {
       console.error("Error submitting form", error);

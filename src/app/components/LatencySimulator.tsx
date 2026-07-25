@@ -26,7 +26,7 @@ export default function LatencySimulator({ language }: LatencySimulatorProps) {
           {/* Descriptions */}
           <div className="reveal">
             <span className="text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-3 block">
-              {language === 'ar' ? 'دقة تنسيق حركية' : 'Precision Hand-Eye Sync'}
+              {language === 'ar' ? 'تنسيق فوري بين اليد والشاشة' : 'Precision Hand-Eye Sync'}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-6">
               {m.latencyTitle}
