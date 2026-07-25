@@ -99,7 +99,7 @@ export default function DemoForm({ language }: DemoFormProps) {
           <span className="text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-3 block">
             {m.navDemo}
           </span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 mb-4">
             {m.demoTitle}
           </h2>
           <p className="text-zinc-500 font-light leading-relaxed">
@@ -122,14 +122,14 @@ export default function DemoForm({ language }: DemoFormProps) {
                 onClick={() => setFormSubmitted(false)}
                 className="mt-8 text-xs font-bold text-zinc-900 border border-zinc-300 hover:bg-zinc-50 rounded-full px-6 py-2 transition-all cursor-pointer bg-transparent font-semibold"
               >
-                {language === 'ar' ? 'إرسال طلب آخر' : 'Submit Another Request'}
+                {language === 'ar' ? 'إرسال طلب جديد' : 'Submit Another Request'}
               </button>
             </div>
           ) : (
-            <form onSubmit={handleFormSubmit} className="space-y-6">
+            <form onSubmit={handleFormSubmit} dir={isRTL ? 'rtl' : 'ltr'} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Name */}
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-1.5 text-start">
                   <label htmlFor="demo-name" className="text-xs font-bold text-zinc-700">{m.demoName} *</label>
                   <input
                     id="demo-name"
@@ -138,12 +138,12 @@ export default function DemoForm({ language }: DemoFormProps) {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-4 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none"
+                    className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-4 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none text-start"
                   />
                 </div>
 
                 {/* Clinic Name */}
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-1.5 text-start">
                   <label htmlFor="demo-clinic" className="text-xs font-bold text-zinc-700">{m.demoClinic} *</label>
                   <input
                     id="demo-clinic"
@@ -152,14 +152,14 @@ export default function DemoForm({ language }: DemoFormProps) {
                     required
                     value={formData.clinic}
                     onChange={handleInputChange}
-                    className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-4 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none"
+                    className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-4 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none text-start"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Email */}
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-1.5 text-start">
                   <label htmlFor="demo-email" className="text-xs font-bold text-zinc-700">{m.demoEmail} *</label>
                   <input
                     id="demo-email"
@@ -168,12 +168,12 @@ export default function DemoForm({ language }: DemoFormProps) {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-4 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none"
+                    className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-4 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none text-start"
                   />
                 </div>
 
                 {/* Phone */}
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-1.5 text-start">
                   <label htmlFor="demo-phone" className="text-xs font-bold text-zinc-700">{m.demoPhone} *</label>
                   <input
                     id="demo-phone"
@@ -182,14 +182,14 @@ export default function DemoForm({ language }: DemoFormProps) {
                     required
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-4 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none"
+                    className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-4 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none text-start"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Country Selector */}
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-1.5 text-start">
                   <label htmlFor="demo-country" className="text-xs font-bold text-zinc-700">{m.demoCountry}</label>
                   <div className="relative">
                     <select
@@ -197,7 +197,7 @@ export default function DemoForm({ language }: DemoFormProps) {
                       name="country"
                       value={formData.country}
                       onChange={handleInputChange}
-                      className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-5 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none appearance-none cursor-pointer"
+                      className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-5 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none appearance-none cursor-pointer text-start"
                     >
                       {countriesList.map((country) => (
                         <option key={country.code} value={country.enName}>
@@ -212,7 +212,7 @@ export default function DemoForm({ language }: DemoFormProps) {
                 </div>
 
                 {/* Preferred Contact Time */}
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-1.5 text-start">
                   <label htmlFor="demo-time" className="text-xs font-bold text-zinc-700">{m.demoTime}</label>
                   <div className="relative">
                     <select
@@ -220,7 +220,7 @@ export default function DemoForm({ language }: DemoFormProps) {
                       name="preferredTime"
                       value={formData.preferredTime}
                       onChange={handleInputChange}
-                      className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-5 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none appearance-none cursor-pointer"
+                      className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-full px-5 py-2.5 bg-white text-zinc-900 text-sm transition-all outline-none appearance-none cursor-pointer text-start"
                     >
                       <option value="morning">{m.demoTimeMorning}</option>
                       <option value="afternoon">{m.demoTimeAfternoon}</option>
@@ -234,7 +234,7 @@ export default function DemoForm({ language }: DemoFormProps) {
               </div>
 
               {/* Notes/Message */}
-              <div className="space-y-1.5 text-left">
+              <div className="space-y-1.5 text-start">
                 <label htmlFor="demo-message" className="text-zinc-700 text-xs font-bold">{m.demoMessage}</label>
                 <textarea
                   id="demo-message"
@@ -242,12 +242,12 @@ export default function DemoForm({ language }: DemoFormProps) {
                   rows={4}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-2xl px-5 py-3 bg-white text-zinc-900 text-sm transition-all outline-none resize-none"
+                  className="w-full border border-zinc-200 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 rounded-2xl px-5 py-3 bg-white text-zinc-900 text-sm transition-all outline-none resize-none text-start"
                 />
               </div>
 
               {/* Submit Button */}
-              <div className="pt-2 flex justify-end">
+              <div className={`pt-2 flex ${isRTL ? 'justify-start' : 'justify-end'}`}>
                 <button
                   type="submit"
                   disabled={isSubmitting}

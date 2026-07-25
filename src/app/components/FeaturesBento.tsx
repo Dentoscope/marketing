@@ -88,18 +88,18 @@ export default function FeaturesBento({ language }: FeaturesBentoProps) {
   const m = localTranslations[language];
 
   const features = [
-    { title: m.feat1Title, desc: m.feat1Desc, icon: "video" },
-    { title: m.feat2Title, desc: m.feat2Desc, icon: "mic" },
-    { title: m.feat3Title, desc: m.feat3Desc, icon: "database" },
-    { title: m.feat4Title, desc: m.feat4Desc, icon: "hardware" },
-    { title: m.feat5Title, desc: m.feat5Desc, icon: "twain" },
-    { title: m.feat6Title, desc: m.feat6Desc, icon: "3d" },
-    { title: m.feat7Title, desc: m.feat7Desc, icon: "timeline" },
-    { title: m.feat8Title, desc: m.feat8Desc, icon: "calendar" },
-    { title: m.feat9Title, desc: m.feat9Desc, icon: "rx" },
+    { title: m.feat1Title, desc: m.feat1Desc, icon: "timeline" },
+    { title: m.feat2Title, desc: m.feat2Desc, icon: "calendar" },
+    { title: m.feat3Title, desc: m.feat3Desc, icon: "3d" },
+    { title: m.feat4Title, desc: m.feat4Desc, icon: "rx" },
+    { title: m.feat5Title, desc: m.feat5Desc, icon: "video" },
+    { title: m.feat6Title, desc: m.feat6Desc, icon: "mic" },
+    { title: m.feat7Title, desc: m.feat7Desc, icon: "twain" },
+    { title: m.feat8Title, desc: m.feat8Desc, icon: "feedback" },
+    { title: m.feat9Title, desc: m.feat9Desc, icon: "pdf" },
     { title: m.feat10Title, desc: m.feat10Desc, icon: "print" },
-    { title: m.feat11Title, desc: m.feat11Desc, icon: "feedback" },
-    { title: m.feat12Title, desc: m.feat12Desc, icon: "pdf" }
+    { title: m.feat11Title, desc: m.feat11Desc, icon: "hardware" },
+    { title: m.feat12Title, desc: m.feat12Desc, icon: "database" }
   ];
 
   return (
@@ -108,9 +108,9 @@ export default function FeaturesBento({ language }: FeaturesBentoProps) {
         
         <div className="text-center mb-16 reveal">
           <span className="text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-3 block">
-            {language === 'ar' ? 'مواصفات ومميزات النظام' : 'System Capabilities'}
+            {language === 'ar' ? 'ما يقدمه لك دنتوسكوب' : 'What Dentoscope Does for You'}
           </span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
             {m.bentoHeader}
           </h2>
         </div>
@@ -122,7 +122,7 @@ export default function FeaturesBento({ language }: FeaturesBentoProps) {
                 {renderFeatureIcon(feat.icon)}
               </div>
               <div>
-                <h3 className="text-lg font-bold text-zinc-900 mb-2">{feat.title}</h3>
+                <h3 className="text-lg font-semibold text-zinc-900 mb-2">{feat.title}</h3>
                 <p className="text-xs text-zinc-500 leading-relaxed font-light">{feat.desc}</p>
               </div>
             </div>

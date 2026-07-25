@@ -3,7 +3,7 @@ import { Alexandria } from "next/font/google";
 import "./globals.css";
 
 const alexandria = Alexandria({
-  variable: "--font-arabic",
+  variable: "--main-font",
   subsets: ["latin", "arabic"],
   weight: "variable"
 });
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="rtl" className={`${alexandria.variable}`}>
+    <html lang="en" className={`${alexandria.variable}`}>
       <body className="antialiased min-h-screen bg-white text-zinc-900">
         {children}
       </body>

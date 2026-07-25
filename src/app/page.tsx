@@ -67,7 +67,10 @@ export default function HomePage() {
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll('.reveal');
-    animatedElements.forEach((el) => observer.observe(el));
+    animatedElements.forEach((el) => {
+      el.classList.remove('is-visible');
+      observer.observe(el);
+    });
 
     return () => {
       animatedElements.forEach((el) => observer.unobserve(el));
@@ -96,7 +99,7 @@ export default function HomePage() {
         toggleLanguage={toggleLanguage}
         scrollToSection={scrollToSection}
       />
-      <main className="overflow-x-hidden">
+      <main key={language} className="overflow-x-hidden">
         <Hero language={language} scrollToSection={scrollToSection} />
         <Gallery language={language} scrollToSection={scrollToSection} />
         <LatencySimulator language={language} />

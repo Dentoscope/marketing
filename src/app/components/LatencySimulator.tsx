@@ -26,9 +26,9 @@ export default function LatencySimulator({ language }: LatencySimulatorProps) {
           {/* Descriptions */}
           <div className="reveal">
             <span className="text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-3 block">
-              {language === 'ar' ? 'التنسيق الحركي الجراحي' : 'Sterile Clinical Coordination'}
+              {language === 'ar' ? 'دقة تنسيق حركية' : 'Precision Hand-Eye Sync'}
             </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-6">
               {m.latencyTitle}
             </h2>
             <p className="text-zinc-500 mb-8 font-light leading-relaxed">
@@ -53,7 +53,7 @@ export default function LatencySimulator({ language }: LatencySimulatorProps) {
                 </svg>
               </div>
               <span className="text-xs text-zinc-400 uppercase tracking-widest mt-4 font-semibold">
-                {language === 'ar' ? 'الحدث الفعلي (حركة الطبيب)' : 'Actual Clinic Event (Doctor Action)'}
+                {language === 'ar' ? 'الحدث الفعلي (حركة يدك)' : 'What Actually Happens (Your Movement)'}
               </span>
             </div>
 

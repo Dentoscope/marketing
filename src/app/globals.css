@@ -3,7 +3,7 @@
 :root {
   --background: #f9f9fa;
   --foreground: #1d1d1f;
-  
+
   --primary: #1d1d1f;
   --primary-hover: #000000;
   --secondary: #f5f5f7;
@@ -15,6 +15,7 @@
 }
 
 @theme {
+  --font-sans: var(--main-font), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-text-muted: var(--text-muted);
@@ -25,29 +26,7 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-html[dir="rtl"] body,
-html[dir="rtl"] .font-sans,
-html[dir="rtl"] input,
-html[dir="rtl"] select,
-html[dir="rtl"] textarea,
-html[dir="rtl"] button,
-html[dir="rtl"] p,
-html[dir="rtl"] span,
-html[dir="rtl"] a,
-html[dir="rtl"] h1,
-html[dir="rtl"] h2,
-html[dir="rtl"] h3,
-html[dir="rtl"] h4,
-html[dir="rtl"] h5,
-html[dir="rtl"] h6,
-html[dir="rtl"] .font-bold,
-html[dir="rtl"] .font-black,
-html[dir="rtl"] .font-semibold {
-  font-family: var(--font-arabic), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  line-height: 1.8 !important;
+  font-family: var(--main-font), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Custom scrollbar */
@@ -55,13 +34,16 @@ html[dir="rtl"] .font-semibold {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #ffffff;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #e5e5e7;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #d2d2d7;
 }
@@ -71,26 +53,15 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Typography scale and contrast overrides */
-.text-xs {
-  font-size: 0.925rem !important; /* Scales up 12px to 14.8px */
-}
-.text-sm {
-  font-size: 1.05rem !important; /* Scales up 14px to 16.8px */
-}
-.text-base {
-  font-size: 1.15rem !important; /* Scales up 16px to 18.4px */
-}
-.text-lg {
-  font-size: 1.25rem !important; /* Scales up 18px to 20px */
-}
-
 /* High-contrast text replacements */
 .text-zinc-500 {
-  color: #3f3f46 !important; /* Replaces gray/zinc-500 with high-contrast zinc-700 */
+  color: #3f3f46 !important;
+  /* Replaces gray/zinc-500 with high-contrast zinc-700 */
 }
+
 .text-zinc-400 {
-  color: #52525b !important; /* Replaces lighter zinc-400 with high-contrast zinc-600 */
+  color: #52525b !important;
+  /* Replaces lighter zinc-400 with high-contrast zinc-600 */
 }
 
 /* Scroll reveal animations */
@@ -113,18 +84,50 @@ html {
   .reveal-delay-100 {
     transition-delay: 200ms;
   }
+
   .reveal-delay-200 {
     transition-delay: 450ms;
   }
+
   .reveal-delay-300 {
     transition-delay: 700ms;
   }
+
   .reveal-delay-400 {
     transition-delay: 950ms;
   }
-  .reveal-delay-500 {
-    transition-delay: 1200ms;
+}
+
+/* Animated text selection highlight effect */
+@keyframes textSelectHighlight {
+  0% {
+    background-size: 0% 100%;
+    color: #27272a;
+  }
+  25% {
+    color: #27272a;
+  }
+  100% {
+    background-size: 100% 100%;
+    color: #ffffff;
   }
 }
 
+.hero-subtitle-selected {
+  display: inline;
+  background-image: linear-gradient(to right, #18181b, #18181b);
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: 0% 100%;
+  padding: 0.1em 0.35em;
+  margin: 0;
+  border-radius: 0px !important;
+  box-shadow: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: textSelectHighlight 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
 
+html[dir="rtl"] .hero-subtitle-selected {
+  background-position: 100% 0%;
+}

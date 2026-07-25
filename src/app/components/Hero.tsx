@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getAssetPath } from '../utils/assets';
 import { localTranslations } from '../translations';
+import { CLINIC_IMAGES } from '../config/images';
 
 interface HeroProps {
   language: 'en' | 'ar';
@@ -15,19 +16,21 @@ export default function Hero({ language, scrollToSection }: HeroProps) {
     <section className="relative pt-20 pb-16 px-6 flex flex-col items-center text-center max-w-6xl mx-auto">
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-zinc-100 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-      <span className="text-xs font-bold tracking-widest text-zinc-500 uppercase mb-4">
-        {language === 'ar' ? 'مساعد تصوير العيادات المتطور' : 'Medical assistant for dental clinics'}
+      <span className="text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-4">
+        {language === 'ar' ? 'المنصة الرقمية المتكاملة لعيادات الأسنان' : 'The complete digital platform for dental clinics'}
       </span>
 
-      <h1 className="text-6xl md:text-8xl font-black tracking-tight text-zinc-900 mb-6 leading-none select-none reveal">
+      <h1 className="text-6xl md:text-8xl font-black tracking-tight text-zinc-900 leading-none select-none reveal my-5">
         {m.heroTitle}
       </h1>
 
-      <p className="text-2xl md:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-500 max-w-3xl mb-8 leading-tight reveal reveal-delay-100">
-        {m.heroSubtitle}
+      <p className="text-xl md:text-2xl font-medium max-w-3xl mb-8 leading-relaxed reveal reveal-delay-100">
+        <span className="hero-subtitle-selected">
+          {m.heroSubtitle}
+        </span>
       </p>
 
-      <p className="text-base text-zinc-500 max-w-xl mb-10 leading-relaxed font-light reveal reveal-delay-200">
+      <p className="text-sm sm:text-base text-zinc-500 max-w-xl mb-10 leading-relaxed font-normal reveal reveal-delay-200">
         {m.heroDesc}
       </p>
 
@@ -43,7 +46,7 @@ export default function Hero({ language, scrollToSection }: HeroProps) {
           onClick={() => scrollToSection('gallery')}
           className="border border-zinc-200 hover:bg-zinc-50 font-semibold px-5 py-2.5 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer text-zinc-600 hover:text-zinc-900 bg-transparent"
         >
-          {language === 'ar' ? 'تصفح النظام' : 'Explore System'}
+          {language === 'ar' ? 'شاهد النظام' : 'See It in Action'}
           <svg className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
@@ -62,7 +65,7 @@ export default function Hero({ language, scrollToSection }: HeroProps) {
         </div>
         <div className="relative h-[250px] sm:h-[480px] w-full rounded-lg overflow-hidden border border-zinc-100">
           <Image
-            src={getAssetPath("/screenshots/dashboard_real.png")}
+            src={getAssetPath(CLINIC_IMAGES.heroDashboard[language])}
             alt="Dentoscope Clinic Dashboard Screenshot"
             fill
             sizes="(max-width: 1024px) 100vw, 1024px"
