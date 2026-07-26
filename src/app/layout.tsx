@@ -9,6 +9,7 @@ const alexandria = Alexandria({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://dentoscope.tech"),
   title: "Dentoscope — The Complete Digital Platform for Dental Clinics",
   description: "One platform for your entire dental practice: patient records, zero-lag microscope streaming, 3D case presentations, appointment scheduling, and digital prescriptions. Runs 100% locally with zero cloud dependencies.",
   keywords: [
