@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import { getAssetPath } from '../utils/assets';
 import { localTranslations } from '../translations';
 import { CLINIC_IMAGES } from '../config/images';
+import ImageModal, { ModalImage } from './ImageModal';
 
 interface HeroProps {
   language: 'en' | 'ar';
@@ -11,6 +13,17 @@ interface HeroProps {
 export default function Hero({ language, scrollToSection }: HeroProps) {
   const m = localTranslations[language];
   const isRTL = language === 'ar';
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const heroImageSrc = getAssetPath(CLINIC_IMAGES.heroDashboard[language]);
+  const heroModalImages: ModalImage[] = [
+    {
+      src: heroImageSrc,
+      alt: "Dentoscope Clinic Dashboard Screenshot",
+      title: language === 'ar' ? 'واجهة لوحة التحكم - دنتوسكوب' : 'Dentoscope Clinic Dashboard',
+      desc: m.heroSubtitle,
+    },
+  ];
 
   return (
     <section className="relative pt-20 pb-16 px-6 flex flex-col items-center text-center max-w-6xl mx-auto">
@@ -61,19 +74,43 @@ export default function Hero({ language, scrollToSection }: HeroProps) {
             <div className="w-3 h-3 rounded-full bg-zinc-200" />
             <div className="w-3 h-3 rounded-full bg-zinc-200" />
           </div>
-          <div className="w-12" />
+          <div className="w-12 text-right">
+            <span className="text-[10px] text-zinc-400 font-medium tracking-wide">
+              {language === 'ar' ? 'انقر للتكبير' : 'Click to enlarge'}
+            </span>
+          </div>
         </div>
-        <div className="relative h-[250px] sm:h-[480px] w-full rounded-lg overflow-hidden border border-zinc-100">
+        <div
+          onClick={() => setIsModalOpen(true)}
+          className="relative h-[250px] sm:h-[480px] w-full rounded-lg overflow-hidden border border-zinc-100 cursor-zoom-in group"
+        >
           <Image
-            src={getAssetPath(CLINIC_IMAGES.heroDashboard[language])}
+            src={heroImageSrc}
             alt="Dentoscope Clinic Dashboard Screenshot"
             fill
             sizes="(max-width: 1024px) 100vw, 1024px"
-            className="object-cover object-top select-none"
+            className="object-cover object-top select-none transition-all duration-500 group-hover:scale-102"
             priority
           />
+          {/* Hover Overlay with Expand Badge */}
+          <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+            <div className="bg-zinc-900/90 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-xs font-semibold shadow-xl flex items-center gap-2 border border-white/20 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
+              <span>{language === 'ar' ? 'تكبير الصورة' : 'Click to Enlarge'}</span>
+            </div>
+          </div>
         </div>
       </div>
+
+      <ImageModal
+        images={heroModalImages}
+        currentIndex={0}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        language={language}
+      />
     </section>
   );
 }
