@@ -8,7 +8,6 @@ import { DOWNLOAD_CONFIG } from '../config/download';
 
 export default function DownloadPage() {
   const [downloadStarted, setDownloadStarted] = useState(false);
-  const exeUrl = getAssetPath(DOWNLOAD_CONFIG.windowsExePath);
 
   return (
     <main className="min-h-screen bg-[#f5f5f7] text-zinc-900 flex flex-col justify-between p-6">
@@ -55,17 +54,16 @@ export default function DownloadPage() {
             </p>
           </div>
 
-          {/* Download Button */}
+          {/* Download Button — links to GitHub Releases (trusted domain, avoids "suspicious download" warnings) */}
           <a
-            href={exeUrl}
-            download={DOWNLOAD_CONFIG.windowsFileName}
+            href={DOWNLOAD_CONFIG.windowsExeUrl}
             onClick={() => setDownloadStarted(true)}
             className="w-full sm:w-auto bg-zinc-900 hover:bg-black text-white font-semibold px-8 py-3.5 rounded-full text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer no-underline hover:scale-105 active:scale-95"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Download Dentoscope-Setup-3.0.0.exe
+            Download Dentoscope-Setup-{DOWNLOAD_CONFIG.version}.exe
           </a>
 
           {/* System Requirements */}
